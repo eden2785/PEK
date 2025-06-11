@@ -1,0 +1,29 @@
+{
+    "name": "my-project",
+    "version": "1.0.0",
+    "description": "My Node.js + MongoDB project",
+    "main": "server.js",
+    "scripts": {
+        "start": "tsc && node dist/server.js",
+        "dev": "nodemon server.js",
+        "docs": "jsdoc . -r -d docs"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.2",
+        "mongodb": "^6.17.0",
+        "mongoose": "^7.0.0",
+        "morgan": "^1.10.0",
+        "pug": "^3.0.3",
+        "typescript": "^5.7.3"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "nodemon": "^3.1.9",
+        "ts-node": "^10.9.2"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

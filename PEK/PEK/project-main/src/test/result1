@@ -1,0 +1,35 @@
+__________________________________
+
+testing getting the about
+-------------------------
+url=http://localhost:5000/api/about
+data.status_code=200
+b'[{"first_name":"Eden","last_name":"Dzanashvili"},{"first_name":"Karina","last_name":"Haimov"}]'
+data.text=[{"first_name":"Eden","last_name":"Dzanashvili"},{"first_name":"Karina","last_name":"Haimov"}]
+[{'first_name': 'Eden', 'last_name': 'Dzanashvili'}, {'first_name': 'Karina', 'last_name': 'Haimov'}]
+
+
+testing getting the report - 1
+------------------------------
+url=http://localhost:5000/api/report/?id=123123&year=2025&month=6
+data.status_code=200
+b'{"userid":"123123","year":"2025","month":"6","costs":[{"food":[{"sum":8,"description":"milk 9","day":9},{"sum":10,"description":"milk","day":9},{"sum":8,"description":"milk 9","day":10},{"sum":12,"description":"coffee","day":11},{"sum":20,"description":"green juice","day":12},{"sum":22,"description":"yellow cheese","day":11},{"sum":12,"description":"bread","day":11},{"sum":6,"description":"gum","day":11},{"sum":8,"description":"milk 9","day":10},{"sum":10,"description":"test","day":11},{"sum":8,"description":"milk 9","day":11}]},{"education":[]},{"health":[]},{"housing":[]}]}'
+data.text={"userid":"123123","year":"2025","month":"6","costs":[{"food":[{"sum":8,"description":"milk 9","day":9},{"sum":10,"description":"milk","day":9},{"sum":8,"description":"milk 9","day":10},{"sum":12,"description":"coffee","day":11},{"sum":20,"description":"green juice","day":12},{"sum":22,"description":"yellow cheese","day":11},{"sum":12,"description":"bread","day":11},{"sum":6,"description":"gum","day":11},{"sum":8,"description":"milk 9","day":10},{"sum":10,"description":"test","day":11},{"sum":8,"description":"milk 9","day":11}]},{"education":[]},{"health":[]},{"housing":[]}]}
+
+
+
+testing adding cost item
+----------------------------------
+url=http://localhost:5000/api/add
+data.status_code=201
+b'{"description":"milk 9","category":"food","userid":123123,"sum":8,"_id":"68494d69bb84c7ce69d466ac","createdAt":"2025-06-11T09:33:29.766Z","updatedAt":"2025-06-11T09:33:29.766Z","__v":0}'
+
+
+testing getting the report - 2
+------------------------------
+url=http://localhost:5000/api/report/?id=123123&year=2025&month=6
+data.status_code=200
+b'{"userid":"123123","year":"2025","month":"6","costs":[{"food":[{"sum":8,"description":"milk 9","day":9},{"sum":10,"description":"milk","day":9},{"sum":8,"description":"milk 9","day":10},{"sum":12,"description":"coffee","day":11},{"sum":20,"description":"green juice","day":12},{"sum":22,"description":"yellow cheese","day":11},{"sum":12,"description":"bread","day":11},{"sum":6,"description":"gum","day":11},{"sum":8,"description":"milk 9","day":10},{"sum":10,"description":"test","day":11},{"sum":8,"description":"milk 9","day":11},{"sum":8,"description":"milk 9","day":11}]},{"education":[]},{"health":[]},{"housing":[]}]}'
+data.text={"userid":"123123","year":"2025","month":"6","costs":[{"food":[{"sum":8,"description":"milk 9","day":9},{"sum":10,"description":"milk","day":9},{"sum":8,"description":"milk 9","day":10},{"sum":12,"description":"coffee","day":11},{"sum":20,"description":"green juice","day":12},{"sum":22,"description":"yellow cheese","day":11},{"sum":12,"description":"bread","day":11},{"sum":6,"description":"gum","day":11},{"sum":8,"description":"milk 9","day":10},{"sum":10,"description":"test","day":11},{"sum":8,"description":"milk 9","day":11},{"sum":8,"description":"milk 9","day":11}]},{"education":[]},{"health":[]},{"housing":[]}]}
+
+
